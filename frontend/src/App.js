@@ -26,7 +26,7 @@ class App extends React.Component {
     }
   }
   componentDidMount(){
-    axios.get("http://localhost:5050/apistudent/")
+    axios.get("http://localhost:5050/apiStudent/")
     .then((res)=>{
       this.setState({
         student:res.data,
@@ -40,7 +40,7 @@ class App extends React.Component {
   submit(event,id){
     event.preventDefault();
     if(id===0){
-      axios.post("http://localhost:5050/apistudent/",{
+      axios.post("http://localhost:5050/apiStudent/",{
         firstname:this.state.firstname,
         lastname:this.state.lastname,
         email:this.state.email
@@ -49,7 +49,7 @@ class App extends React.Component {
         this.componentDidMount();
       })
     }else{
-      axios.put("http://localhost:5050/apistudent/",{
+      axios.put("http://localhost:5050/apiStudent/",{
         id:this.state.id,
         firstname:this.state.firstname,
         lastname:this.state.lastname,
@@ -60,13 +60,13 @@ class App extends React.Component {
     }
   }
     delete(id){
-      axios.delete(`http://localhost:5050/apistudent/${id}`)
+      axios.delete(`http://localhost:5050/apiStudent/${id}`)
       .then(()=>{
         this.componentDidMount();
       })
     }
       edit(id){
-        axios.get(`http://localhost:5050/apistudent/${id}`)
+        axios.get(`http://localhost:5050/apiStudent/${id}`)
         .then((res)=>{
           console.log(res.data);
           this.setState({
