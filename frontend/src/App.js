@@ -1,6 +1,7 @@
 //import logo from './logo.svg';
 import './App.css';
 import React from 'react';
+//import AppPage from './mycomponent/addpage';
 
 import axios from 'axios';
 import Table from '@mui/material/Table';
@@ -10,6 +11,7 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
+//import Button from '@mui/material/Button';
 //import Box from '@mui/material/Box';
 //import TextField from '@mui/material/TextField';
 
@@ -98,19 +100,16 @@ class App extends React.Component {
                       <input onChange={(e)=>this.setState({firstname:e.target.value})} value={this.state.firstname} type="text" id="autocomplete-input" class="autocomplete" />
                       <label for="autocomplete-input">FIRSTNAME</label>
                   </div>
-                      {/* <TextField onChange={(e)=>this.setState({firstname:e.target.value})} value={this.state.firstname} id="outlined-basic" label="Firstname" variant="outlined" /> */}
                   <div class="input-field col s12 m6">    
                       <i class="material-icons prefix">textsms</i>
                       <input onChange={(e)=>this.setState({lastname:e.target.value})} value={this.state.lastname} type="text" id="autocomplete-input" class="autocomplete" />
                       <label for="autocomplete-input">LASTEMAIL</label>
                   </div>
-          </div>        
-                      {/* <TextField onChange={(e)=>this.setState({lastname:e.target.value})} value={this.state.lastname} id="outlined-basic" label="Lastname" variant="outlined" /> */}       
+          </div>              
                   <div class="input-field col s12">
                       <i class="material-icons prefix">email</i>
                       <input onChange={(e)=>this.setState({email:e.target.value})} value={this.state.email} type="email" id="autocomplete-input" class="autocomplete" />
-                      <label for="autocomplete-input">EMAIL</label>
-                      {/* <TextField onChange={(e)=>this.setState({email:e.target.value})} value={this.state.email} id="outlined-basic" label="Email" variant="outlined" /> */}
+                      <label for="autocomplete-input">EMAIL</label>                    
                   </div>
                   <button class="btn waves-effect waves-light" type="submit" name="action">Submit
                     <i class="material-icons right">send</i>
