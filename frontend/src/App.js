@@ -1,6 +1,7 @@
 //import logo from './logo.svg';
 import './App.css';
 import React from 'react';
+
 //import AppPage from './mycomponent/addpage';
 
 import axios from 'axios';
@@ -81,18 +82,10 @@ class App extends React.Component {
       }
   render(){
     return(
+      
       <div className="container">
+
         <div className="row">
-        {/* <Box
-          component="form"
-          sx={{
-            '& > :not(style)': { m: 1, width: '25ch' },
-          }}
-          noValidate
-          autoComplete="off"
-        >
-        
-        </Box> */}
         <form onSubmit={(e)=>this.submit(e,this.state.id)}>
           <div className="row">
                   <div class="input-field col s12 m6">
@@ -132,7 +125,7 @@ class App extends React.Component {
               {this.state.student.map(stud=>
               //rows.map((row) => (
                 <TableRow
-                  //key={row.name}
+                  key={stud.firstname}
                   sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                 >
                   <TableCell component="th" scope="row">{stud.firstname}</TableCell>
