@@ -24,36 +24,58 @@ import org.springframework.web.bind.annotation.RestController;
 public class StudentController {
     
     @Autowired
-    private StudentRepository studentRepository;
+    private StudentService studentService;
 
+    // @GetMapping("/")
+    // public List<Student> getStudent(){
+    //     return studentRepository.findAll();
+    // }
     @GetMapping("/")
     public List<Student> getStudent(){
-        return studentRepository.findAll();
+        return studentService.getStudents();
     }
 
+    // @GetMapping("/{id}")
+    // public Student getStudent(@Valid @PathVariable Integer id){
+    //     return studentRepository.findById(id).orElse(null);
+    // }
     @GetMapping("/{id}")
     public Student getStudent(@Valid @PathVariable Integer id){
-        return studentRepository.findById(id).orElse(null);
+        return studentService.getStudents(id);
+        
     }
 
+
+    // @PostMapping("/")
+    // public Student postStudent(@Valid @RequestBody Student student){
+    //     return studentRepository.save(student);
+    // }
     @PostMapping("/")
     public Student postStudent(@Valid @RequestBody Student student){
-        return studentRepository.save(student);
+        return studentService.postStudents(student);
     }
     
+    // @DeleteMapping("/{id}")
+    // public Integer deleteStudent(@Valid @PathVariable Integer id){
+    //     studentRepository.deleteById(id);
+    //     return id;
+    // }
     @DeleteMapping("/{id}")
     public Integer deleteStudent(@Valid @PathVariable Integer id){
-        studentRepository.deleteById(id);
-        return id;
+        return studentService.deleteStudents(id);
     }
 
+    // @PutMapping("/")
+    // public Student updateStudent(@Valid @RequestBody Student student){
+    //     Student olderStudent = studentRepository.findById(student.getId()).orElse(null);
+    //     olderStudent.setFirstname(student.getFirstname());
+    //     olderStudent.setLastname(student.getLastname());
+    //     olderStudent.setEmail(student.getEmail());
+    //     return studentRepository.save(olderStudent);
+    // }
     @PutMapping("/")
     public Student updateStudent(@Valid @RequestBody Student student){
-        Student olderStudent = studentRepository.findById(student.getId()).orElse(null);
-        olderStudent.setFirstname(student.getFirstname());
-        olderStudent.setLastname(student.getLastname());
-        olderStudent.setEmail(student.getEmail());
-        return studentRepository.save(olderStudent);
+        return studentService.updateStudents(student);
     }
 
 }
